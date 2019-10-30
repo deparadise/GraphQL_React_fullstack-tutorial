@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server');
+const { gql } = require("apollo-server");
 
 const typeDefs = gql`
 	# Your schema will go here
@@ -8,6 +8,14 @@ const typeDefs = gql`
 		launch(id: ID!): Launch
 		# Queries for the current user
 		me: User
+	}
+
+	type Launch {
+		id: ID!
+		site: String
+		mission: Mission
+		rocket: Rocket
+		isBooked: Boolean!
 	}
 `;
 
