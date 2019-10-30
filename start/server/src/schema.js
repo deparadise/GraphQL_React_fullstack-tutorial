@@ -39,6 +39,16 @@ const typeDefs = gql`
 		SMALL
 		LARGE
 	}
+
+	type Mutation {
+		# if false, booking trips failed -- check errors
+		bookTrips(launchIds: [ID]!): TripUpdateResponse!
+
+		# if false, cancellation failed -- check errors
+		cancelTrip(launchId: ID!): TripUpdateResponse!
+
+		login(email: String): String # login token
+	}
 `;
 
 module.exports = typeDefs;
