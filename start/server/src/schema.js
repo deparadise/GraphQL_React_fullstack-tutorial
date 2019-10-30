@@ -49,6 +49,12 @@ const typeDefs = gql`
 
 		login(email: String): String # login token
 	}
+
+	type TripUpdateResponse {
+		success: Boolean!
+		message: String
+		launches: [Launch]
+	}
 `;
 
 module.exports = typeDefs;
